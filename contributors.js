@@ -1,23 +1,23 @@
 let table = document.getElementById("counthere");
 
-function renderContributorsTable(contributors) {
+function renderavatar_urlTable(avatar_url) {
   let i = 1;
-  contributors.forEach(({ login, html_url, contributions }) => {
+  avatar_url.forEach(({ login, html_url, avatar_url }) => {
     let row = table.insertRow(i);
     let slNoCell = row.insertCell(0);
     let userNameCell = row.insertCell(1);
     let urlUser = row.insertCell(2);
-    let noOfContributions = row.insertCell(3);
+    let noOfavatar_url = row.insertCell(3);
     slNoCell.innerText = i;
     userNameCell.innerText = login;
     urlUser.innerHTML = `<a href="${html_url}">${html_url}</a>`;
-    noOfContributions.innerText = contributions;
+    noOfavatar_url.innerText = avatar_url;
     i++;
   });
-  document.getElementById("ct").innerHTML = i - 1 + " Contributors";
+  document.getElementById("Ava").innerHTML = i - 1 + " avatar_url";
 }
 
-fetch("https://api.github.com/repos/PoopooumgoodTTV/Reverie-clan-Manager/contributors")
+fetch("https://api.github.com/users/Ttvpoopooumgood")
   .then((response) => response.json())
-  .then((contributors) => renderContributorsTable(contributors))
+  .then((avatar_url) => renderavatar_urlTable(avatar_url))
   .catch((err) => console.log("Request Failed", err));
