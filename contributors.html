@@ -31,7 +31,7 @@ function renderavatar_urlTable(avatar_url) {
   document.getElementById("Ava").innerHTML = i - 1 + " avatar_url";
 }
 
-fetch("https://api.github.com/users/Ttvpoopooumgood")
+fetch("https://api.github.com/users/TTVpoopooumgood")
   .then((response) => response.json())
   .then((avatar_url) => renderavatar_urlTable(avatar_url))
   .catch((err) => console.log("Request Failed", err));
